@@ -10,6 +10,11 @@ public class Point {
         this.y = y;
     }
 
+    public Point(Point o) {
+        this.x = o.x;
+        this.y = o.y;
+    }
+
     public double getX() {
         return x;
     }
@@ -20,13 +25,8 @@ public class Point {
 
     @Override
     public boolean equals(Object o) {
-
         if (this == o) {
             return true;
-        }
-
-        if (o == null) {
-            return false;
         }
 
         if (!(o instanceof Point)) {
@@ -35,12 +35,13 @@ public class Point {
 
         Point point = (Point) o;
 
-        return Double.compare(point.x, x) == 0 && Double.compare(point.y, y) == 0;
+        return Double.compare(point.x, x) == 0 &&
+               Double.compare(point.y, y) == 0;
     }
 
     @Override
     public int hashCode() {
-        return (int) (x * 100043 + y);
+        return (int) (31 * x + y);
     }
 
     @Override

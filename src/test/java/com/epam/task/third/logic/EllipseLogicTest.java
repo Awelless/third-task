@@ -32,7 +32,7 @@ public class EllipseLogicTest {
 
     @Test
     public void testFindSquare() {
-        double result = logic.findSquare(Ellipse);
+        double result = logic.findArea(Ellipse);
 
         Assert.assertEquals(Ellipse_SQUARE, result, DELTA);
     }

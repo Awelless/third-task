@@ -6,16 +6,16 @@ import com.epam.task.third.entity.Point;
 public class EllipseLogic {
 
     public boolean isValid(Ellipse ellipse) {
-        Point firstCorner  = ellipse.getFirstCorner();
-        Point secondCorner = ellipse.getSecondCorner();
+        Point firstCorner  = ellipse.getFirstPoint();
+        Point secondCorner = ellipse.getSecondPoint();
 
         return firstCorner.getX() != secondCorner.getX() &&
                firstCorner.getY() != secondCorner.getY();
     }
 
-    public double findSquare(Ellipse ellipse) {
-        Point firstCorner  = ellipse.getFirstCorner();
-        Point secondCorner = ellipse.getSecondCorner();
+    public double findArea(Ellipse ellipse) {
+        Point firstCorner  = ellipse.getFirstPoint();
+        Point secondCorner = ellipse.getSecondPoint();
 
         double xSemiaxis = Math.abs(firstCorner.getX() - secondCorner.getX()) / 2;
         double ySemiaxis = Math.abs(firstCorner.getY() - secondCorner.getY()) / 2;
@@ -24,8 +24,8 @@ public class EllipseLogic {
     }
 
     public double findPerimeter(Ellipse ellipse) {
-        Point firstCorner  = ellipse.getFirstCorner();
-        Point secondCorner = ellipse.getSecondCorner();
+        Point firstCorner  = ellipse.getFirstPoint();
+        Point secondCorner = ellipse.getSecondPoint();
 
         double xSemiaxis = Math.abs(firstCorner.getX() - secondCorner.getX()) / 2;
         double ySemiaxis = Math.abs(firstCorner.getY() - secondCorner.getY()) / 2;
@@ -35,24 +35,24 @@ public class EllipseLogic {
     }
 
     boolean isCrossingXOrdinate(Ellipse ellipse) {
-        Point firstCorner  = ellipse.getFirstCorner();
-        Point secondCorner = ellipse.getSecondCorner();
+        Point firstCorner  = ellipse.getFirstPoint();
+        Point secondCorner = ellipse.getSecondPoint();
 
         //if one x coordinate is positive and one is negative, multiplication will be negative
         return firstCorner.getX() * secondCorner.getX() <= 0;
     }
 
     boolean isCrossingYOrdinate(Ellipse ellipse) {
-        Point firstCorner  = ellipse.getFirstCorner();
-        Point secondCorner = ellipse.getSecondCorner();
+        Point firstCorner  = ellipse.getFirstPoint();
+        Point secondCorner = ellipse.getSecondPoint();
 
         //if one y coordinate is positive and one is negative, multiplication will be negative
         return firstCorner.getY() * secondCorner.getY() <= 0;
     }
 
     boolean isCircle(Ellipse ellipse) {
-        Point firstCorner  = ellipse.getFirstCorner();
-        Point secondCorner = ellipse.getSecondCorner();
+        Point firstCorner  = ellipse.getFirstPoint();
+        Point secondCorner = ellipse.getSecondPoint();
 
         double xAxis = Math.abs(firstCorner.getX() - secondCorner.getX());
         double yAxis = Math.abs(firstCorner.getY() - secondCorner.getY());
